@@ -4,6 +4,8 @@ A tool that lets users test out configurations of various [D3](https://github.co
 
 - [d3-format](https://github.com/d3/d3-format)
 
+You can access it [here](https://camdecoster.github.io/d3-tester/).
+
 ## Built With
 
 - [Vue 3](https://vuejs.org/)

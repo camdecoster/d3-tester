@@ -2,12 +2,14 @@
 import * as d3 from 'd3';
 import { ref } from 'vue';
 
+// Save format to window object
+window.d3format = d3.format;
+
 const formatString = ref('0,.2f');
 const error = ref(null);
 const inputNumber = ref('1234.56');
 
 function getOutputString() {
-	console.log('formatting');
 	let output = '';
 	try {
 		output = d3.format(formatString.value)(inputNumber.value);
@@ -41,10 +43,10 @@ function getOutputString() {
 		<CFormInput
 			id="value"
 			v-model="inputNumber"
-			type=""
 		/>
 	</div>
 	<div class="mb-3">
+		<h3>Output String</h3>
 		<p>{{ getOutputString() }}</p>
 	</div>
 	<div v-if="error">
@@ -52,9 +54,3 @@ function getOutputString() {
 	</div>
 </CForm>
 </template>
-
-<style scoped>
-a {
-  color: #42b983;
-}
-</style>

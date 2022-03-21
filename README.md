@@ -1,5 +1,7 @@
 # D3 Tester
 
+![d3 tester logo](/public/logo_medium.png "D3 Tester")
+
 A tool that lets users test out configurations of various [D3](https://github.com/d3/d3) components. This includes the following:
 
 - [d3-format](https://github.com/d3/d3-format)

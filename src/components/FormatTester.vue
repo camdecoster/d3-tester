@@ -38,20 +38,22 @@ function getFormatSpecifier() {
 <template>
 <CContainer class="container-overall">
 	<h1>D3 Format Tester</h1>
-	<p style="text-align: left">
-		<a
-			href="https://github.com/d3/d3-format"
-			target="_blank"
-		>D3 Format</a> is a library that helps to make numbers more human readable. You pass it a format specifier and a value and it transforms the value into an output string based on the format specifier. The format specifier is built using the following template:
-	</p>
-	<p>
-		<code>[​[fill]align][sign][symbol][0][width][,][.precision][~][type]</code>
-	</p>
+	<CContainer>
+		<p style="text-align: left">
+			<a
+				href="https://github.com/d3/d3-format"
+				target="_blank"
+			>D3 Format</a> is a library that helps to make numbers more human readable. You pass it a format specifier and a value and it transforms the value into an output string based on the format specifier. The format specifier is built using the following template:
+		</p>
+		<p>
+			<code>[[fill]align][sign][symbol][0][width][,][.precision][~][type]</code>
+		</p>
+	</CContainer>
 	<CForm>
-		<div class="d-flex flex-row justify-content-between mb-3">
+		<CContainer class="d-flex flex-row justify-content-between mb-3">
 			<div class="container-input">
 				<CFormLabel for="input">
-					D3 Format String
+					Specifier
 				</CFormLabel>
 				<CFormInput
 					id="input"
@@ -68,8 +70,8 @@ function getFormatSpecifier() {
 					v-model="inputNumber"
 				/>
 			</div>
-		</div>
-		<div class="mb-3">
+		</CContainer>
+		<CContainer class="mb-3">
 			<CFormLabel for="output">
 				Output String
 			</CFormLabel>
@@ -78,8 +80,8 @@ function getFormatSpecifier() {
 				readonly
 				:value="getOutputString()"
 			/>
-		</div>
-		<div class="d-flex flex-column align-items-center">
+		</CContainer>
+		<CContainer class="d-flex flex-column align-items-center">
 			<h3>Format Specifier Information</h3>
 			<CTable
 				v-if="Object.keys(getFormatSpecifier()).length"
@@ -105,21 +107,22 @@ function getFormatSpecifier() {
 			<p v-else>
 				Unable to determine format
 			</p>
-		</div>
+		</CContainer>
 	</CForm>
-	<div
-		v-if="error"
-		class="container-error"
-	>
-		Error: {{ error }}
-	</div>
+	<CContainer>
+		<h2
+			v-if="error"
+			class="container-error"
+		>
+			Error: {{ error }}
+		</h2>
+	</CContainer>
 </CContainer>
 </template>
 
 <style>
 .container-error {
 	color: red;
-	font-weight: bold;
 }
 
 .container-input {
@@ -127,10 +130,10 @@ function getFormatSpecifier() {
 }
 
 .container-overall {
-	width: 60%;	
+	max-width: 800px;	
 }
 
 .container-table {
-	width: 50%;
+	max-width: 360px;
 }
 </style>

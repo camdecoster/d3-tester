@@ -3,7 +3,7 @@ import * as d3 from 'd3';
 import { ref } from 'vue';
 
 // Save format to window object
-window.d3format = d3.format;
+window.d3Format = d3.format;
 
 const formatString = ref('0,.2f');
 const error = ref(null);
@@ -24,7 +24,6 @@ function getOutputString() {
 function getFormatSpecifier() {
 	let output = {};
 	try {
-		console.log('formatSpecifier');
 		output = d3.formatSpecifier(formatString.value);
 		error.value = null;
 	} catch(e) {
@@ -98,7 +97,10 @@ function getFormatSpecifier() {
 					</CTableRow>
 				</CTableHead>
 				<CTableBody>
-					<CTableRow v-for="(value, key) in getFormatSpecifier()">
+					<CTableRow
+						v-for="(value, key) in getFormatSpecifier()"
+						:key="key"
+					>
 						<CTableDataCell>{{ key }}</CTableDataCell>
 						<CTableDataCell>{{ value }}</CTableDataCell>
 					</CTableRow>
@@ -130,6 +132,7 @@ function getFormatSpecifier() {
 }
 
 .container-overall {
+	margin-top: 20px;
 	max-width: 800px;	
 }
 

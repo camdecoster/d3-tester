@@ -14,8 +14,8 @@ export default [
 		path: '/d3-time-format',
 		component: TimeFormatTester
 	},
-	// {
-	// 	path: '/:pathMatch(.*)*',
-	// 	redirect: '/'
-	// }
+	{
+		path: '/:pathMatch(.*)*',
+		redirect: '/'
+	}
 ];

@@ -57,14 +57,16 @@ const visible = ref(false);
 							</CNavItem>
 						</div>
 						<div>
-							<CNavItem>
+							<CNavItem class="h-100">
 								<CNavLink
-									class="px-2 py-1"
+									class="h-100 py-0"
 									href="https://github.com/camdecoster/d3-tester"
 									target="_blank"
 									title="See the source on GitHub"
 								>
-									<i class="nav-icon bi bi-github" />
+									<div class="d-flex h-100 align-items-center">
+										<i class="nav-icon bi bi-github" />
+									</div>
 								</CNavLink>
 							</CNavItem>
 						</div>
@@ -88,6 +90,7 @@ const visible = ref(false);
 
 .nav-icon {
 	font-size: 30px;
+	line-height: 1;
 }
 
 .nav-container {
